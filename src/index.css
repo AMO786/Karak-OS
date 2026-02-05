@@ -1,0 +1,55 @@
+@import '@fontsource/outfit/300.css';
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-velvet font-sans antialiased selection:bg-gold/20 selection:text-velvet;
+    background: radial-gradient(circle at top left, #fcfbf7, #eee8c8);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold via-gold-light to-gold;
+  }
+
+  .border-gold-gradient {
+    border-image: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37) 1;
+  }
+
+  /* Glass variants for luxury look - less blur, more solid */
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-lg;
+  }
+
+  .glass-dark {
+    @apply bg-velvet/95 backdrop-blur-md border border-white/5 shadow-2xl text-cream;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
